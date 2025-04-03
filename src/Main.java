@@ -11,9 +11,11 @@ Lorem ipsum dolor sit amet, vim ne eripuit vulputate. Vide tantas dicunt ne ius,
                 "laoreet qui ne, pri maiorum detracto definitiones et. Sea quis laudem dolorem eu.";
 
         try {
+
             BufferedWriter writer = new BufferedWriter(new FileWriter("in.txt"));
             writer.write(text);
             writer.close();
+
 
             BufferedReader reader = new BufferedReader(new FileReader("in.txt"));
             StringBuilder content = new StringBuilder();
@@ -25,17 +27,19 @@ Lorem ipsum dolor sit amet, vim ne eripuit vulputate. Vide tantas dicunt ne ius,
 
             String originalText = content.toString();
 
+
             String resultA = originalText.replaceAll("(?m)$", "\n");
-            System.out.println(" a)\n" + resultA);
+            System.out.println("Rezultatul a):\n" + resultA);
+
 
             String resultB = originalText.replace(".", ".\n");
-            System.out.println(" b)\n" + resultB);
+            System.out.println("Rezultatul b):\n" + resultB);
+
 
             BufferedWriter outWriter = new BufferedWriter(new FileWriter("out.txt"));
-            outWriter.write(" a):\n" + resultA + "\n");
-            outWriter.write(" b):\n" + resultB);
+            outWriter.write("Rezultatul a):\n" + resultA + "\n");
+            outWriter.write("Rezultatul b):\n" + resultB);
             outWriter.close();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
